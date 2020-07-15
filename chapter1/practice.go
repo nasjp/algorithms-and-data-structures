@@ -130,3 +130,32 @@ func Practice1_13(x ...int) int {
 
 	return max
 }
+
+func Practice1_14(x int) []int {
+	var factors []int
+	for x%2 == 0 {
+		factors = append(factors, 2)
+		x /= 2
+	}
+
+	for i := 3; i <= x; i += 2 {
+		if x%i != 0 {
+			continue
+		}
+
+		factors = append(factors, i)
+		x /= i
+	}
+
+	return factors
+}
+
+func Practice1_15(n uint32) uint32 {
+	c := uint32(1)
+
+	for i := uint32(1); i <= n-1; i++ {
+		c = c * (n + i - 1) / i
+	}
+
+	return c / (n)
+}

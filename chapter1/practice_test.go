@@ -297,3 +297,53 @@ func TestPractice1_13(t *testing.T) {
 		})
 	}
 }
+
+func TestPractice1_14(t *testing.T) {
+	tests := []struct {
+		name string
+		arg  int
+		want []int
+	}{
+		{"Case1", 84, []int{2, 2, 3, 7}},
+		{"Case2", 64, []int{2, 2, 2, 2, 2, 2}},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			if got := chapter1.Practice1_14(tt.arg); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("got: %v, want: %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestPractice1_15(t *testing.T) {
+	tests := []struct {
+		name string
+		arg  uint32
+		want uint32
+	}{
+		{"Case1", 1, 1},
+		{"Case2", 2, 1},
+		{"Case3", 3, 2},
+		{"Case4", 4, 5},
+		{"Case5", 5, 14},
+		{"Case6", 6, 42},
+		{"Case7", 7, 132},
+		{"Case8", 8, 429},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			if got := chapter1.Practice1_15(tt.arg); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("got: %v, want: %v", got, tt.want)
+			}
+		})
+	}
+}
